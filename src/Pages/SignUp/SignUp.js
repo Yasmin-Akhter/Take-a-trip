@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 const SignUp = () => {
     const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth);
-    let errorElement;
+
     const handleCreateUser = e => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -18,6 +18,7 @@ const SignUp = () => {
     if (user) {
         navigate('/');
     }
+
 
     return (
         <div>

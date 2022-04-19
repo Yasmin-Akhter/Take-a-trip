@@ -31,7 +31,7 @@ const Header = () => {
 
 
                         <CustomLink to="/">Home</CustomLink>
-                        <CustomLink to="/about">About us</CustomLink>
+                        <CustomLink to="/about">About</CustomLink>
                         <CustomLink to="/blogs">Blogs</CustomLink>
                         <CustomLink to="/Packages">Packages</CustomLink>
                         <CustomLink to="/checkOut">Checkout</CustomLink>
