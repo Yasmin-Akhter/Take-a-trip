@@ -1,22 +1,49 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Login = () => {
+    const navigate = useNavigate();
+    // const [user] = useAuthState(auth);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (user) {
+        navigate('/checkOut');
+    }
+    if (error) {
+        console.log(error);
+    }
+    const handleSignIn = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
+        signInWithEmailAndPassword(email, password);
+
+    }
+
+
     return (
         <div>
 
 
-            <Form className='container w-50 mx-auto my-3'>
+            <Form onSubmit={handleSignIn} className='container w-50 mx-auto my-3'>
                 <h1 className='text-center'>Please Login</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
