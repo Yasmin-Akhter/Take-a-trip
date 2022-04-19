@@ -36,7 +36,7 @@ const Header = () => {
                         <CustomLink to="/Packages">Packages</CustomLink>
                         <CustomLink to="/checkOut">Checkout</CustomLink>
                         {
-                            user ? <button onClick={handleSignOut} className='btn btn-link text-decoration-none'> SignOut</button> :
+                            user ? <button onClick={handleSignOut} className='btn btn-link text-decoration-none text-white' > SignOut</button> :
                                 <CustomLink to="/Login">Login</CustomLink>
                         }
                     </Nav>
