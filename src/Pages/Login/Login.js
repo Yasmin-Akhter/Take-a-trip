@@ -1,21 +1,32 @@
+
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Login = () => {
     const navigate = useNavigate();
-    // const [user] = useAuthState(auth);
+    const location = useLocation();
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        error
+
     ] = useSignInWithEmailAndPassword(auth);
 
+
+    const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
+
+    let from = location.state?.from?.pathname || "/";
+
     if (user) {
-        navigate('/checkOut');
+        navigate(from, { replace: true });
+    }
+    if (googleUser) {
+        navigate(from, { replace: true });
     }
     if (error) {
         console.log(error);
@@ -24,9 +35,13 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+
         signInWithEmailAndPassword(email, password);
 
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle();
     }
 
 
@@ -45,16 +60,22 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button className='w-50 d-block mx-auto' variant="primary" type="submit">
                     Submit
                 </Button>
                 <p>New to Take A Trip? <span><Link to="/signup"> <button className='btn btn-link text-decoration-none'>Please Sign up</button></Link> </span> </p>
-                <p className='text-center'>Or</p>
-                <button className='w-50 d-block mx-auto'>Sign Up with Google</button>
+                <div className='d-flex align-items-center justify-content-center'>
+                    <div style={{ height: '1px' }} className="bg-primary w-50 mb-3" > </div>
+                    <p className='px-3'> Or </p>
+                    <div style={{ height: '1px' }} className='bg-primary w-50 mb-3' >  </div>
+                </div>
+
+
+                <button className='w-50 d-block mx-auto mb-3' onClick={handleGoogleSignIn}> Sign in with Google</button>
+
             </Form>
+
         </div>
     );
 };

@@ -44,9 +44,7 @@ const SignUp = () => {
                     <Form.Label> Confirm Password</Form.Label>
                     <Form.Control type="password" name=' confirm-password' placeholder=" Confirm Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button className='w-50 d-block mx-auto' variant="primary" type="submit">
                     Submit
                 </Button>

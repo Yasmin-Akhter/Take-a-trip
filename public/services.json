@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Lake Geneva",
+        "location": "Singapore",
+        "description": "Traveling promotes happiness and helps you take your mind off stressful situations. This leads to lower cortisol levels, making you feel more calm and content.",
+        "img": "https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://www.planetware.com/photos-large/SIN/singapore-gardens-by-the-bay.jpg"
+    },
+    {
+        "id": 2,
+        "name": " Rome's Capitoline Museums.",
+        "location": "Italy",
+        "description": "Located on the summit of the Capitol Hill near the Roman Forum in the centre of Rome, the Capitoline Museums are the oldest public museums in the world.",
+        "img": "https://www.ourescapeclause.com/wp-content/uploads/2019/02/Rome-50.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sentosa Island",
+        "location": "Canada",
+        "description": "The food, the prices, the incredible hotels, cheap hostels, beautiful islands, the ease of getting around- any and all could be responsible for why Thailand is so popular.",
+        "img": "https://cdn.pixabay.com/photo/2018/08/16/08/39/hallstatt-3609863__340.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Eiffel Tower",
+        "location": "France",
+        "description": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower",
+        "img": "https://as1.ftcdn.net/v2/jpg/01/80/64/40/1000_F_180644063_Q6BcqYELZAKADOdVlkwMYLyvKWnPyFWF.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Mount Fuzi",
+        "location": "Thailad",
+        "description": "A must-see on Sentosa Island is the Merlion, Singapore's famous statue that has the head of a lion and the body of a fish. You can take an escalator to the top of the statue and enjoy panoramic views of the surrounding area. ",
+        "img": "https://thethaiger.com/wp-content/uploads/2019/04/Backpackers-Thailand.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Yellowstone National Park",
+        "location": "United State",
+        "description": "Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot. Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. ",
+        "img": "https://www.theindiatourism.com/images/India-Honeymoon-Tour.jpg"
+    }
+]
