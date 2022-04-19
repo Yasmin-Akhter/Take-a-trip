@@ -1,12 +1,16 @@
 import React from 'react';
+import Reviews from '../../Reviews/Reviews';
+import Slider from '../Slider/Slider';
 
 import Services from './Services/Services';
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home</h1>
+
+            <Slider></Slider>
             <Services></Services>
+            <Reviews></Reviews>
 
         </div>
     );

@@ -18,8 +18,8 @@ const Slider = () => {
 
         <Carousel activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
-                <img
-                    className="d-block h-50 w-100 car-img"
+                <img style={{ height: '450px' }}
+                    className="d-block w-100 "
                     src={slider1}
                     alt="First slide"
                 />
@@ -29,7 +29,7 @@ const Slider = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img
+                <img style={{ height: '450px' }}
                     className="d-block w-100"
                     src={slider2}
                     alt="Second slide"
@@ -41,7 +41,7 @@ const Slider = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img
+                <img style={{ height: '450px' }}
                     className="d-block w-100"
                     src={slider3}
                     alt="Third slide"

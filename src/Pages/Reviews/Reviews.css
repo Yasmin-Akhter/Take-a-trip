@@ -1,0 +1,13 @@
+.reviews-title h1 {
+    font-family: 'Comfortaa', cursive;
+    color: blue;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+}

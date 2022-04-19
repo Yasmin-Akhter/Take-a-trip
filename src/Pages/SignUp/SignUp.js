@@ -7,7 +7,8 @@ import auth from '../../firebase.init';
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth);
+    let errorElement;
     const handleCreateUser = e => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -30,7 +31,7 @@ const SignUp = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -38,16 +39,17 @@ const SignUp = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label> Confirm Password</Form.Label>
-                    <Form.Control type="password" name=' confirm-password' placeholder=" Confirm Password" />
+                    <Form.Control type="password" name=' confirm-password' placeholder=" Confirm Password" required />
                 </Form.Group>
 
                 <Button className='w-50 d-block mx-auto' variant="primary" type="submit">
-                    Submit
+                    Signout
                 </Button>
+
                 <p>Already Registered? <span><Link to="/login"> <button className='btn btn-link text-decoration-none'>Please Login</button></Link> </span> </p>
 
             </Form>
